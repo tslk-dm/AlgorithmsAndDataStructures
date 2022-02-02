@@ -6,26 +6,38 @@ namespace AlgorithmsAndDataStructures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите номер задания");
-            int jobNumber = Convert.ToInt32(Console.ReadLine());
-
-            switch (jobNumber)
+            while (true)
             {
-                case 1:
-                    TestCheckNumberIsPrime(3, true);
-                    TestCheckNumberIsPrime(4, false);
-                    break;
-                case 2:
-                    Console.WriteLine("Сложность функции - O(N^3)");
-                    break;
-                case 3:
-                    break;
-                default:
-                    Console.WriteLine($"Задания с номером {jobNumber} не существует.");
-                    break;
+                Console.WriteLine("Введите номер задания");
+                int jobNumber = Convert.ToInt32(Console.ReadLine());
+
+                switch (jobNumber)
+                {
+                    case 1:
+                        TestCheckNumberIsPrime(3, true);
+                        Console.WriteLine();
+                        TestCheckNumberIsPrime(4, false);
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.WriteLine("Сложность функции - O(N^3)");
+                        Console.ReadLine();
+                        break;
+                    case 3:
+                        Console.Write("Введите номер числа последовательности Фибоначчи: ");
+                        int number = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Рекурсивное вычисление");
+                        Console.WriteLine($"Число Фибоначчи: {GetFibonacciNumber.Recursion(number)}");
+                        Console.WriteLine("Вычисление через цикл");
+                        Console.WriteLine($"Число Фибоначчи: {GetFibonacciNumber.Cycle(number)}");
+                        Console.ReadLine();
+                        break;
+                    default:
+                        Console.WriteLine($"Задания с номером {jobNumber} не существует.");
+                        break;
+                }
             }
             
-
         }
 
         static bool CheckNumberIsPrime(int number)
