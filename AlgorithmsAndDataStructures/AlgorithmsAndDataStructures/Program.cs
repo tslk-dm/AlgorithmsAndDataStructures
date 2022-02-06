@@ -32,19 +32,49 @@ namespace AlgorithmsAndDataStructures
                         Console.WriteLine($"Число Фибоначчи: {GetFibonacciNumber.Cycle(number)}");
                         Console.ReadLine();
                         break;
+                    case 4:
+                        DoublyLinkedList list = new DoublyLinkedList();
+                        list.AddNode(10);
+                        list.AddNode(20);
+                        list.AddNode(30);
+                        Console.WriteLine("Список:");
+                        list.PrintList();
+
+                        Console.WriteLine("Добавили узел после узла со значением 20");
+                        Node node = list.FindNode(20);
+                        list.AddNodeAfter(node, 99);
+                        Console.WriteLine("Список:");
+                        list.PrintList();
+                        Console.WriteLine();
+
+                        Console.WriteLine("Удалили узел со значением 20");
+                        list.RemoveNode(node);
+                        Console.WriteLine("Список:");
+                        list.PrintList();
+                        Console.WriteLine();
+
+
+                        Console.WriteLine("Удалили узел с индексом 1, начиная с 0");
+                        list.RemoveNode(2);
+                        Console.WriteLine("Список:");
+                        list.PrintList();
+                        Console.WriteLine();
+
+                        Console.WriteLine("Количество узлов");
+                        Console.WriteLine(list.GetCount());
+                        Console.WriteLine();
+                        
+                        break;
                     default:
                         Console.WriteLine($"Задания с номером {jobNumber} не существует.");
                         break;
                 }
             }
-            
         }
 
         static bool CheckNumberIsPrime(int number)
         {
-           
             // int number = Convert.ToInt32(Console.ReadLine()); // ввод данных, указанный в блок схеме
-            
             int d = 0;
             int i = 2;
 
@@ -64,8 +94,7 @@ namespace AlgorithmsAndDataStructures
             {
                 Console.WriteLine("Не простое");
                 return false;
-            }
-                
+            }   
         }
 
         static void TestCheckNumberIsPrime(int number, bool сorrectAnswer)
