@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmsAndDataStructures
 {
-    interface ILesson
+    public class PointClass
     {
-        int Id { get; }
-        string Description { get; }
-        void RunLesson();
-        
-
+        public int X;
+        public int Y;
     }
 }

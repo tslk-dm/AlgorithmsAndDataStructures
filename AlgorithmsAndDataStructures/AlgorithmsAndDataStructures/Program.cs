@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,16 +9,11 @@ namespace AlgorithmsAndDataStructures
     {
         static void Main(string[] args)
         {
-            //Lesson1 lesson1 = new Lesson1();
-            //lesson1.RunLesson();
-
-            //Lesson2 lesson2 = new Lesson2();
-            //lesson2.RunLesson();
-
             List<ILesson> lessons = new List<ILesson>
             {
                 new Lesson1(),
-                new Lesson2()
+                new Lesson2(),
+                new Lesson3()
             };
 
             while (true)
@@ -29,12 +25,12 @@ namespace AlgorithmsAndDataStructures
                 {
                     if (lesson.Id == numberLesson)
                     {
+                        Console.WriteLine(lesson.Description); 
                         lesson.RunLesson();
                     }
                 }
                 Console.WriteLine();
             }
-
         }
     }
 }

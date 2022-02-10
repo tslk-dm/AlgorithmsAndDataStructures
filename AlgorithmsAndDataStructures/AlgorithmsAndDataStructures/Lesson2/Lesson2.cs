@@ -10,7 +10,8 @@ namespace AlgorithmsAndDataStructures
     {
         public int Id => 2;
 
-        public string Description => "Требуется реализовать класс двусвязного списка и операции вставки, удаления и поиска элемента в нём в соответствии с интерфейсом.";
+        public string Description => "Требуется реализовать класс двусвязного списка и операции вставки,\n" + 
+            "удаления и поиска элемента в нём в соответствии с интерфейсом.\n";
 
         public void RunLesson()
         {
